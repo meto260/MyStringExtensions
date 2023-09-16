@@ -6,7 +6,7 @@ The most used string algorithms gathered under a single class
 ```
 NuGet\Install-Package MyStringExtensions -Version 1.0.0
 ```
-version of package for use last version see [https://www.nuget.org/packages/MyAutoMapper/](https://www.nuget.org/packages/MyStringExtensions/)
+version of package for use last version see [https://www.nuget.org/packages/MyStringExtensions/](https://www.nuget.org/packages/MyStringExtensions/)
 
 # How to use
 
