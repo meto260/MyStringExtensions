@@ -2,6 +2,12 @@
 
 The most used string algorithms gathered under a single class
 
+# Install
+```
+NuGet\Install-Package MyStringExtensions -Version 1.0.0
+```
+version of package for use last version see [https://www.nuget.org/packages/MyAutoMapper/](https://www.nuget.org/packages/MyStringExtensions/)
+
 # How to use
 
 <code>Cut(length)</code>
