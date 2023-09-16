@@ -7,6 +7,8 @@
     <Description>The most used string algorithms gathered under a single class</Description>
     <PackageIcon>icon.jpeg</PackageIcon>
     <PackageReadmeFile>README.md</PackageReadmeFile>
+    <PackageProjectUrl>https://github.com/meto260/MyStringExtensions/</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/meto260/MyStringExtensions/</RepositoryUrl>
   </PropertyGroup>
 
   <ItemGroup>
