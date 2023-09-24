@@ -12,7 +12,7 @@ version of package for use last version see [https://www.nuget.org/packages/MySt
 
 <code>Cut(length)</code>
 Substring for unknown length. No errors for mismatches due to empty space or lengthSubstring for unknown length. No errors for mismatches due to empty space or length
-```
+```csharp
 string sourceText = "++a little Bunny raBBit waNdering in a huge Forest";
 string nullText = null;
 
@@ -28,7 +28,7 @@ Console.WriteLine(sourceText.Cut(5));
 
 <code>TrimInside()</code>
 Trim all whitespace in text
-```
+```csharp
 Console.WriteLine(sourceText.TrimInside());
 //Output: "++alittleBunnyraBBitwaNderinginahugeForest"
 
@@ -36,7 +36,7 @@ Console.WriteLine(sourceText.TrimInside());
 
 <code>NullExists()</code>
 Check Null or Empty value in string collection
-```
+```csharp
 var nulls = new List<string> { "t1", null, "t2" };
 Console.WriteLine(nulls.NullExists());
 //Output: "True"
@@ -51,7 +51,7 @@ Console.WriteLine(nulls.NullExists());
 
 <code>ContainsNosense(seek)</code>
 Find a word in string without sensivity
-```
+```csharp
 Console.WriteLine(sourceText.ContainsNosense("rabbit"));
 //Output: "True"
 
@@ -64,7 +64,7 @@ Console.WriteLine(sourceText.ContainsNosense("horse"));
 
 <code>CountWords(seek)</code>
 Find how many times the word you are looking for is repeated in the text
-```
+```csharp
 Console.WriteLine(sourceText.CountWords("rabbit"));
 //Output: 1
 
@@ -76,7 +76,7 @@ Console.WriteLine(sourceText.CountWords("horse"));
 
 <code>RandomString(length)</code>
 Generate Random text
-```
+```csharp
 Console.WriteLine(StringExtensions.RandomString(12));
 //Output: "%0n9jdhwENCv"
 
@@ -84,7 +84,7 @@ Console.WriteLine(StringExtensions.RandomString(12));
 
 <code>EncryptHash()</code>
 Generate non-recyclable writing from your text
-```
+```csharp
 Console.WriteLine(sourceText.EncryptHash());
 //Output: "9bbdadb281d35bfd90270a06abe0f12ec061957f38a36d8aceefb95630cac6d1"
 
@@ -92,7 +92,7 @@ Console.WriteLine(sourceText.EncryptHash());
 
 <code>Mask(start, length)</code>
 Generate masked text from your text
-```
+```csharp
 Console.WriteLine(sourceText.Mask(8,12));
 //Output: "++a littl***********Bit waNdering in a huge Forest"
 
@@ -100,7 +100,7 @@ Console.WriteLine(sourceText.Mask(8,12));
 
 <code>ToImage()</code>
 Text to image bytes. Exports png file bytes. Only works on Windows OS
-```
+```csharp
 var imgBytes = sourceText.ToImage();
 File.WriteAllBytes("img.png", imgBytes);
 //Output: "img file"
@@ -109,7 +109,7 @@ File.WriteAllBytes("img.png", imgBytes);
 
 <code>ForWordsIn(seek, act)</code>
 Run a delegated action for each found word. Detailed
-```
+```csharp
 sourceText.ForWordsIn("i", x => Console.WriteLine(x));
 //Output:
     //"little
@@ -121,7 +121,7 @@ sourceText.ForWordsIn("i", x => Console.WriteLine(x));
 
 <code>ToTitleCase()</code>
 Make uppercase the first letters after a space
-```
+```csharp
 Console.WriteLine(sourceText.ToTitleCase());
 //Output: "++A Little Bunny Rabbit Wandering In A Huge Forest"
 
@@ -129,7 +129,7 @@ Console.WriteLine(sourceText.ToTitleCase());
 
 <code>ToBodyCase()</code>
 Make uppercase the first character of the text
-```
+```csharp
 Console.WriteLine(sourceText.ToBodyCase());
 //Output: "++A little Bunny raBBit waNdering in a huge Forest"
 
@@ -137,7 +137,7 @@ Console.WriteLine(sourceText.ToBodyCase());
 
 <code>ToLowerUnderscored()</code>
 Make snakecase for source text
-```
+```csharp
 Console.WriteLine(sourceText.ToLowerUnderscored());
 //Output: "++a_little_bunny_ra_b_bit_wa_ndering_in_a_huge_forest"
 
@@ -146,7 +146,7 @@ Console.WriteLine(sourceText.ToLowerUnderscored());
 
 <code>Singularize()</code>
 Deduplicate characters that repeat side by side
-```
+```csharp
 Console.WriteLine(sourceText.Singularize());
 //Output: "+a litle Buny raBit waNdering in a huge Forest"
 
@@ -154,7 +154,7 @@ Console.WriteLine(sourceText.Singularize());
 
 <code>Multiplex(length)</code>
 Duplicate a selected text as many times as you like
-```
+```csharp
 Console.WriteLine("#".Multiplex(21));
 //Output: "######################"
 
@@ -162,7 +162,7 @@ Console.WriteLine("#".Multiplex(21));
 ```
 <code>LoopIn(func)</code>
 Run an action for each character in the text
-```
+```csharp
 var result = sourceText.LoopIn(x => {
     if (x.Equals('h')) {
         return true;
@@ -176,7 +176,7 @@ Console.WriteLine(result);
 
 <code>ClearDigits()</code>
 Remove numeric chars and return new string object
-```
+```csharp
 Console.WriteLine("123 ankara ++".ClearDigits());
 //Output: "ankara ++"
 
@@ -184,7 +184,7 @@ Console.WriteLine("123 ankara ++".ClearDigits());
 
 <code>ClearSymbols()</code>
 Remove symbolic chars and return new string object
-```
+```csharp
 Console.WriteLine(sourceText.ClearSymbols());
 //Output: "a little Bunny raBBit waNdering in a huge Forest"
 
