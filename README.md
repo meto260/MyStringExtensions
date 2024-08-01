@@ -4,7 +4,7 @@ The most used string algorithms gathered under a single class
 
 # Install
 ```
-NuGet\Install-Package MyStringExtensions -Version 1.0.0
+NuGet\Install-Package MyStringExtensions -Version 2.0.0
 ```
 version of package for use last version see [https://www.nuget.org/packages/MyStringExtensions/](https://www.nuget.org/packages/MyStringExtensions/)
 
@@ -207,13 +207,13 @@ Console.WriteLine("123 ankara ++ merkez".ClearDigits().ClearSymbols().TrimInside
 <code>Compress()</code>
 Compress text size
 ```csharp
-string gg = "Kediler, bağımsız ve meraklı yapılarıyla bilinen evcil hayvanlardır. Çeşitli boyut ve renklerde olmalarına rağmen ortak bazı özellikleri vardır. Okşandıklarında mırıldanmaları, avlanma içgüdülerinin güçlü olması ve yüksek yerlere tırmanmaktan hoşlanmaları kedilerin dikkat çekici özelliklerindendir. Bazı insanlar kedileri yalnız ve mesafeli bulurken, diğerleri onların sevgi dolu ve sadık arkadaşlar olduğunu düşünür. Tarih boyunca insanlarla birlikte yaşayan kediler, hem evlerde hem de sokaklarda yaşamını sürdürebilirler.";
+string gg = "Kediler, baÃ°Ã½msÃ½z ve meraklÃ½ yapÃ½larÃ½yla bilinen evcil hayvanlardÃ½r. Ã‡eÃ¾itli boyut ve renklerde olmalarÃ½na raÃ°men ortak bazÃ½ Ã¶zellikleri vardÃ½r. OkÃ¾andÃ½klarÃ½nda mÃ½rÃ½ldanmalarÃ½, avlanma iÃ§gÃ¼dÃ¼lerinin gÃ¼Ã§lÃ¼ olmasÃ½ ve yÃ¼ksek yerlere tÃ½rmanmaktan hoÃ¾lanmalarÃ½ kedilerin dikkat Ã§ekici Ã¶zelliklerindendir. BazÃ½ insanlar kedileri yalnÃ½z ve mesafeli bulurken, diÃ°erleri onlarÃ½n sevgi dolu ve sadÃ½k arkadaÃ¾lar olduÃ°unu dÃ¼Ã¾Ã¼nÃ¼r. Tarih boyunca insanlarla birlikte yaÃ¾ayan kediler, hem evlerde hem de sokaklarda yaÃ¾amÃ½nÃ½ sÃ¼rdÃ¼rebilirler.";
 Console.WriteLine("Compressed Text      : " + gg);
 Console.WriteLine();
 Console.WriteLine("Compressed Size      : " + gg.Compress().Length);
 Console.WriteLine("Decompressed Size    : " + Encoding.ASCII.GetBytes(gg).Length);
 
-//Compressed Text      : Kediler, bağımsız ve meraklı yapılarıyla bilinen evcil hayvanlardır. Çeşitli boyut ve renklerde olmalarına rağmen ortak bazı özellikleri vardır. Okşandıklarında mırıldanmaları, avlanma içgüdülerinin güçlü olması ve yüksek yerlere tırmanmaktan hoşlanmaları kedilerin dikkat çekici özelliklerindendir. Bazı insanlar kedileri yalnız ve mesafeli bulurken, diğerleri onların sevgi dolu ve sadık arkadaşlar olduğunu düşünür. Tarih boyunca insanlarla birlikte yaşayan kediler, hem evlerde hem de sokaklarda yaşamını sürdürebilirler.
+//Compressed Text      : Kediler, baÃ°Ã½msÃ½z ve meraklÃ½ yapÃ½larÃ½yla bilinen evcil hayvanlardÃ½r. Ã‡eÃ¾itli boyut ve renklerde olmalarÃ½na raÃ°men ortak bazÃ½ Ã¶zellikleri vardÃ½r. OkÃ¾andÃ½klarÃ½nda mÃ½rÃ½ldanmalarÃ½, avlanma iÃ§gÃ¼dÃ¼lerinin gÃ¼Ã§lÃ¼ olmasÃ½ ve yÃ¼ksek yerlere tÃ½rmanmaktan hoÃ¾lanmalarÃ½ kedilerin dikkat Ã§ekici Ã¶zelliklerindendir. BazÃ½ insanlar kedileri yalnÃ½z ve mesafeli bulurken, diÃ°erleri onlarÃ½n sevgi dolu ve sadÃ½k arkadaÃ¾lar olduÃ°unu dÃ¼Ã¾Ã¼nÃ¼r. Tarih boyunca insanlarla birlikte yaÃ¾ayan kediler, hem evlerde hem de sokaklarda yaÃ¾amÃ½nÃ½ sÃ¼rdÃ¼rebilirler.
 //Compressed Size      : 460
 //Decompressed Size    : 525
 
