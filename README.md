@@ -98,6 +98,13 @@ Console.WriteLine(sourceText.Mask(8,12));
 
 ```
 
+<code>Mask(startLength, maskLength, endLength, maskChar='*')</code>
+Generate masked text from your text
+```csharp
+Console.WriteLine("HelloWorld!".Mask(4,2, 2, 'x'));
+//Helloxxld!
+
+```
 <code>ToImage()</code>
 Text to image bytes. Exports png file bytes. Only works on Windows OS
 ```csharp
@@ -192,8 +199,22 @@ Console.WriteLine(sourceText.ClearSymbols());
 
 <code>ClearDigits() + ClearSymbols() + TrimInside()</code>
 
-```
+```csharp
 Console.WriteLine("123 ankara ++ merkez".ClearDigits().ClearSymbols().TrimInside());
 //Output: "ankaramerkez"
+
+```
+<code>Compress()</code>
+Compress text size
+```csharp
+string gg = "Kediler, baðýmsýz ve meraklý yapýlarýyla bilinen evcil hayvanlardýr. Çeþitli boyut ve renklerde olmalarýna raðmen ortak bazý özellikleri vardýr. Okþandýklarýnda mýrýldanmalarý, avlanma içgüdülerinin güçlü olmasý ve yüksek yerlere týrmanmaktan hoþlanmalarý kedilerin dikkat çekici özelliklerindendir. Bazý insanlar kedileri yalnýz ve mesafeli bulurken, diðerleri onlarýn sevgi dolu ve sadýk arkadaþlar olduðunu düþünür. Tarih boyunca insanlarla birlikte yaþayan kediler, hem evlerde hem de sokaklarda yaþamýný sürdürebilirler.";
+Console.WriteLine("Compressed Text      : " + gg);
+Console.WriteLine();
+Console.WriteLine("Compressed Size      : " + gg.Compress().Length);
+Console.WriteLine("Decompressed Size    : " + Encoding.ASCII.GetBytes(gg).Length);
+
+//Compressed Text      : Kediler, baðýmsýz ve meraklý yapýlarýyla bilinen evcil hayvanlardýr. Çeþitli boyut ve renklerde olmalarýna raðmen ortak bazý özellikleri vardýr. Okþandýklarýnda mýrýldanmalarý, avlanma içgüdülerinin güçlü olmasý ve yüksek yerlere týrmanmaktan hoþlanmalarý kedilerin dikkat çekici özelliklerindendir. Bazý insanlar kedileri yalnýz ve mesafeli bulurken, diðerleri onlarýn sevgi dolu ve sadýk arkadaþlar olduðunu düþünür. Tarih boyunca insanlarla birlikte yaþayan kediler, hem evlerde hem de sokaklarda yaþamýný sürdürebilirler.
+//Compressed Size      : 460
+//Decompressed Size    : 525
 
 ```

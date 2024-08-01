@@ -141,7 +141,7 @@ public static class StringExtensions {
         for(int i = 0; i< arr.Length; i++) {
             if (i < start) {
                 sb.Append(arr[i]);
-            } else if(i > start && i < (start + length)){
+            } else if(i > start && i <= (start + length)){
                 sb.Append("*");
             } else {
                 sb.Append(arr[i]);
@@ -351,6 +351,33 @@ public static class StringExtensions {
     }
 
     /// <summary>
+    /// String mask 
+    /// ex: value = Turkiye, 
+    /// startLength = 2,
+    /// maskLength = 3,
+    /// endLength = 2
+    /// returns Tu***ye
+    /// </summary>
+    /// <param name="value">Source text</param>
+    /// <param name="startLength">From 0 index -> ex:startLength = 4 (0,1,2,3,4)</param>
+    /// <param name="maskLength">maskChar count -> ex:maskLength = 3 (***) </param>
+    /// <param name="endLength">From value_length-endLength -> ex:value_length= 6, endLength = 4 (4,5,6)</param>
+    /// <returns></returns>
+    public static string Mask(this string value, uint startLength, uint maskLength, uint endLength, char maskChar='*') {
+        var sb = new StringBuilder();
+        for (int i = 0; i < value.Length; i++) {
+            if(i<=startLength)
+                sb.Append(value[i]);
+            else if(i<(value.Length - endLength) && !sb.ToString().Contains(maskChar))
+                for(int c=0;c<maskLength;c++)
+                    sb.Append(maskChar);
+            else if(i >= (value.Length - endLength)-1)
+                sb.Append(value[i]);
+        }
+        return sb.ToString();
+    }
+
+    /// <summary>
     /// Run an action for each character in the text
     /// </summary>
     /// <param name="value">Source text</param>
@@ -424,18 +451,12 @@ public static class StringExtensions {
 
         using (var uncompressedStream = new MemoryStream(Encoding.UTF8.GetBytes(uncompressedString))) {
             using (var compressedStream = new MemoryStream()) {
-                // setting the leaveOpen parameter to true to ensure that compressedStream will not be closed when compressorStream is disposed
-                // this allows compressorStream to close and flush its buffers to compressedStream and guarantees that compressedStream.ToArray() can be called afterward
-                // although MSDN documentation states that ToArray() can be called on a closed MemoryStream, I don't want to rely on that very odd behavior should it ever change
-                using (var compressorStream = new DeflateStream(compressedStream, CompressionLevel.Fastest, true)) {
+                using (var compressorStream = new DeflateStream(compressedStream, CompressionLevel.SmallestSize, true)) {
                     uncompressedStream.CopyTo(compressorStream);
                 }
-
-                // call compressedStream.ToArray() after the enclosing DeflateStream has closed and flushed its buffer to compressedStream
                 compressedBytes = compressedStream.ToArray();
             }
         }
-
         return Convert.ToBase64String(compressedBytes);
     }
 
